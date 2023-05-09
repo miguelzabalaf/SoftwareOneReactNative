@@ -17,14 +17,26 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.18.1",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-native": "^5.4.2",
+    "@types/lodash": "^4.14.194",
+    "add": "^2.0.6",
+    "axios": "^1.4.0",
+    "lodash": "^4.17.21",
     "react": "18.2.0",
     "react-native": "0.71.7",
     "react-native-config": "^1.5.0",
+    "react-native-error-boundary": "^1.2.3",
     "react-native-gesture-handler": "^2.9.0",
+    "react-native-navigation": "^7.33.0-alpha.7",
     "react-native-reanimated": "^3.1.0",
     "react-native-size-matters": "^0.4.0",
-    "react-native-ui-lib": "^7.3.2"
+    "react-native-ui-lib": "^7.3.2",
+    "react-redux": "^8.0.5",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-persist": "^6.0.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

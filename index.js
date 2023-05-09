@@ -1,9 +1,14 @@
-/**
- * @format
- */
+import { Navigation } from 'react-native-navigation';
+import { initRoot } from './src/navigation/roots/init';
+import { presetStyles } from './src/ui/helpers/presetStyles';
+import { preloadScreens } from './src/navigation/helpers/preloadScreens';
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+preloadScreens();
+presetStyles();
+const startAPP = () => {
+  Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setRoot(initRoot);
+  });
+};
 
-AppRegistry.registerComponent(appName, () => App);
+startAPP();
