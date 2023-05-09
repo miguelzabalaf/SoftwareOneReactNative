@@ -1,7 +1,7 @@
 import { AccessTokenModel } from '../../domain/models/accessToken';
 import { types } from '../reducers/token/types';
 
-export function productActions() {
+export function tokenActions() {
   return {
     addAccessToken(payload: AccessTokenModel['auth_token']) {
       return {
