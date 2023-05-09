@@ -2,7 +2,7 @@ module.exports = {
   preset: 'react-native',
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   transformIgnorePatterns: [
-    'node_modules/(?!(@react-native|react-native|react-native-config)/)',
+    'node_modules/(?!(@react-native|react-native|react-native-config|react-native-ui-lib|react-native-size-matters)/)',
   ],
   testPathIgnorePatterns: ['/node_modules/'],
   setupFiles: ['./jest.config.js'],
