@@ -15,8 +15,8 @@ export const homeRoot: LayoutRoot = {
       children: [
         {
           component: {
-            name: viewsName.cities,
-            id: viewsName.cities,
+            name: viewsName.countries,
+            id: viewsName.countries,
           },
         },
       ],

@@ -1,11 +1,11 @@
 import 'react-native';
 import React from 'react';
-import View from '../splashView';
+import Component from '../countryCard';
 
 import renderer from 'react-test-renderer';
 
-describe('SplashView', () => {
+describe('CountryCard', () => {
   it('renders correctly', () => {
-    renderer.create(<View />);
+    renderer.create(<Component />);
   });
 });

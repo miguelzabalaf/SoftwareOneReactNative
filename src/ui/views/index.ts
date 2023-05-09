@@ -1,6 +1,6 @@
 // Views
 import viewsName from '../../navigation/constants/viewsNames';
-import CitiesView from './cities';
+import CountriesView from './countries';
 import SplashView from './splash';
 
 interface Views {
@@ -16,8 +16,8 @@ const views: Views = {
     component: SplashView,
   },
   cities: {
-    name: viewsName.cities,
-    component: CitiesView,
+    name: viewsName.countries,
+    component: CountriesView,
   },
 };
 

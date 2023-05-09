@@ -4,7 +4,7 @@ interface Views {
 
 const viewsName: Views = {
   splash: 'SPLASH_VIEW',
-  cities: 'CITIES_VIEW',
+  countries: 'COUNTRIES_VIEW',
 };
 
 export default viewsName;
