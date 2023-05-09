@@ -8,8 +8,13 @@ import { configureStore } from '@reduxjs/toolkit';
 
 // Reducers
 import { reducers } from './reducers';
+import { TokenInitialState } from './reducers/token/interfaces';
+import { CountryInitialState } from './reducers/country/interfaces';
 
-export interface ReduxStore {}
+export interface ReduxStore {
+  token: TokenInitialState;
+  country: CountryInitialState;
+}
 
 const storeInitialState = {};
 
