@@ -3,23 +3,20 @@ import React from 'react';
 
 // Components
 import { View } from 'react-native';
-import Text from 'react-native-ui-lib/text';
 import Icon from '../../components/icon';
+
+// Hooks
+import { useTimeActive } from './controllers/useTimeActive.controller';
 
 // Styles
 import { splashViewStyles } from './styles';
 
 export default function SplashView(): JSX.Element {
-  const { containerViewStyle, loadingDescriptionContainer } =
-    splashViewStyles();
+  const { containerViewStyle } = splashViewStyles();
+  useTimeActive()
   return (
     <View style={containerViewStyle}>
       <Icon.SoftwareOne scale={0.35} />
-      <View style={loadingDescriptionContainer}>
-        <Text muted center p>
-          Loading...
-        </Text>
-      </View>
     </View>
   );
 }

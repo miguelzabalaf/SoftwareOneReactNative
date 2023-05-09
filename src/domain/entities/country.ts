@@ -1,5 +1,25 @@
+interface NativeName {
+  official: string;
+  common: string;
+}
+interface Name {
+  common: string;
+  official: string;
+  nativeName: { [key: string]: NativeName };
+}
+
+export enum Region {
+  Africa = 'Africa',
+  Americas = 'Americas',
+  Antarctic = 'Antarctic',
+  Asia = 'Asia',
+  Europe = 'Europe',
+  Oceania = 'Oceania',
+}
+
 export interface Country {
-  country_name: string;
-  country_short_name: string;
-  country_phone_code: number;
+  name: Name;
+  capital: string[];
+  region: Region;
+  latlng: number[];
 }

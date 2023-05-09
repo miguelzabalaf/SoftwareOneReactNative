@@ -4,6 +4,7 @@ interface Stacks {
 
 const stacksName: Stacks = {
   init: 'initStack',
+  home: 'homeStack'
 };
 
 export default stacksName;
