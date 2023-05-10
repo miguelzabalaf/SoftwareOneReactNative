@@ -14,10 +14,11 @@ export interface ButtonIconProps extends TouchableOpacityProps {
 }
 
 export default function ButtonIcon(props: ButtonIconProps): JSX.Element {
-  const { Icon, loading, color, disabled } = props;
+  const { Icon, loading, color, disabled, onPress } = props;
   const { containerStyle } = buttonIconStyles({ loading, color, disabled });
   return (
     <TouchableOpacity
+      onPress={onPress}
       disabled={loading || props.disabled}
       activeOpacity={0.8}
       style={containerStyle}>

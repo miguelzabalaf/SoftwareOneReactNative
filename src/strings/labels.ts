@@ -6,4 +6,7 @@ export default {
     anErrorHasOccurred: 'An error has occurred',
     requestError: 'Request error',
   },
+  placeholders: {
+    searchCountries: 'Find your country here.',
+  }
 };

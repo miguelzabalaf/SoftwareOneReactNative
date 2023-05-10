@@ -1,6 +1,7 @@
-import SoftwareOne from './softwareOne/index';
-import { PinMap } from './pinMap/pinMap';
-import { Search } from './search/search';
+import SoftwareOne from './softwareOne';
+import PinMap from './pinMap';
+import Search from './search';
+import Close from './close';
 
 interface Icon {
   SoftwareOne: JSX.Element;
@@ -9,7 +10,8 @@ interface Icon {
 const Icon = {
   SoftwareOne,
   PinMap,
-  Search
+  Search,
+  Close
 };
 
 export default Icon;
