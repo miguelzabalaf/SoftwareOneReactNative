@@ -1,4 +1,4 @@
-import { View, Text, Spacings } from 'react-native-ui-lib';
+import { View, Text, Spacings, Colors } from 'react-native-ui-lib';
 import { CountryCardStyles } from './styles';
 import { Country } from '../../../domain/entities/country';
 import { Sekeleton } from '../skeleton';
@@ -6,8 +6,8 @@ import ButtonIcon from '../buttonIcon';
 import Icon from '../icon';
 
 export interface CountryCardProps {
-  country: Country;
-  loading: boolean;
+  country?: Country;
+  loading?: boolean;
   onPressGoToMap?: () => void;
 }
 
@@ -28,7 +28,7 @@ export default function CountryCard(props: CountryCardProps): JSX.Element {
           <ButtonIcon
             onPress={onPressGoToMap}
             loading={loading}
-            Icon={Icon.PinMap}
+            Icon={() => Icon.PinMap({ color: Colors.white, scale: 1.5 })}
           />
         </View>
         <View style={informationContainerStyle}>
@@ -39,7 +39,7 @@ export default function CountryCard(props: CountryCardProps): JSX.Element {
             />
           ) : (
             <Text h1 extraBold primary numberOfLines={1}>
-              {country?.name.common}
+              {country?.name?.common}
             </Text>
           )}
           {loading ? (

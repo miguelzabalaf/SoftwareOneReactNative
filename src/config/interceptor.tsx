@@ -37,7 +37,7 @@ export const useInterceptor = (_: EnhancedStore<ReduxStore>) => {
   };
 
   useEffect(() => {
-    axios.defaults.baseURL = `${Config.SO_API}/${Config.SO_API_VERSION}}`;
+    axios.defaults.baseURL = `${Config.SO_API}/v3.1`;
     axios.interceptors.request.use(handleRequestSuccess, handleRequestError);
     axios.interceptors.response.use(handleResponseSuccess, handleResponseError);
   }, []);
