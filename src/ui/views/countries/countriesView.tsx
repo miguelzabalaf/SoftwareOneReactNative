@@ -17,9 +17,11 @@ export default function CountriesView(): JSX.Element {
     hasValue,
     onPressButton,
     searchBarRef,
+    bouncedValue,
   } = useSearchBar();
-  const { countries, loading, hasError, onGetAllCountries, onSeeMap } =
-    useData();
+  const { listData, loading, hasError, onGetAllCountries, onSeeMap } = useData({
+    bouncedValue,
+  });
   return (
     <SafeAreaView style={containerStyle}>
       <KeyboardAvoidingView
@@ -30,7 +32,7 @@ export default function CountriesView(): JSX.Element {
           onTryAgain={onGetAllCountries}
           hasError={hasError}
           loading={loading}
-          data={countries}
+          data={listData}
           ListHeaderComponent={
             <SearchBar
               ref={searchBarRef}

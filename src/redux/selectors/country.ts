@@ -11,5 +11,12 @@ export function countrySelectors() {
       );
       return useSelector(selector);
     },
+    getCountriesSearched() {
+      const selector = createSelector(
+        (state: ReduxStore) => state.country,
+        country => country.countriesSearched,
+      );
+      return useSelector(selector);
+    }
   };
 }

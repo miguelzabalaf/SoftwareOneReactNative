@@ -11,3 +11,13 @@ export function getAllCountries(): Promise<AxiosResponse<Array<Country>>> {
   });
   return trackPromise(request);
 }
+
+
+export function searchCountriesByName(name: string): Promise<AxiosResponse<Array<Country>>> {
+  const request = axios.get(`${ endpoints.country.searchByName }/${ name }`, {
+    params: {
+      fields: 'name,capital,region,latlng',
+    },
+  });
+  return trackPromise(request);
+}

@@ -9,5 +9,16 @@ export function countryActions() {
         payload,
       };
     },
+    addCountriesSearched(payload: Array<Country>) {
+      return {
+        type: types.ADD_COUNTRIES_SEARCHED,
+        payload,
+      };
+    },
+    removeCountriesSearched() {
+      return {
+        type: types.REMOVE_COUNTRIES_SEARCHED,
+      };
+    }
   };
 }

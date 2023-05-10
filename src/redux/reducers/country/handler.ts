@@ -5,7 +5,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { types } from './types';
 
 // Interfaces
-import { CountryInitialState } from './interfaces';
+import { CountryInitialState } from './initialState';
 
 // Models
 import { Country } from '../../../domain/entities/country';
@@ -21,4 +21,22 @@ export const handler = {
       countries,
     };
   },
+  [types.ADD_COUNTRIES_SEARCHED]: (
+    state: CountryInitialState,
+    action: PayloadAction<Array<Country>>,
+  ) => {
+    const countriesSearched = action.payload;
+    return {
+      ...state,
+      countriesSearched,
+    };
+  },
+  [types.REMOVE_COUNTRIES_SEARCHED]: (
+    state: CountryInitialState,
+  ) => {
+    return {
+      ...state,
+      countriesSearched: [],
+    };
+  }
 };

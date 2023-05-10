@@ -5,6 +5,8 @@ import { countriesDummy } from './dataDummy/countries.dummy';
 describe('Country - use cases', () => {
   const countryRepositoryMock: jest.Mocked<CountryRepository> = {
     getAllCountries: jest.fn(),
+    searchCountriesByName: jest.fn(),
+    removeCountriesSearched: jest.fn(),
   };
   const { getAllCountries } = countryUseCases(countryRepositoryMock);
 

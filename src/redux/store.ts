@@ -8,7 +8,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 // Reducers
 import { reducers } from './reducers';
-import { CountryInitialState } from './reducers/country/interfaces';
+
+// Initial States
+import { CountryInitialState } from './reducers/country/initialState';
 
 export interface ReduxStore {
   country: CountryInitialState;
@@ -33,12 +35,12 @@ export const store = configureStore({
   middleware: getDefaultMiddleware =>
     __DEV__
       ? [
-          ...getDefaultMiddleware({ serializableCheck: false }),
-          reduxInmmutableStateInvariant,
-        ]
+        ...getDefaultMiddleware({ serializableCheck: false }),
+        reduxInmmutableStateInvariant,
+      ]
       : getDefaultMiddleware({
-          serializableCheck: false,
-        }),
+        serializableCheck: false,
+      }),
   preloadedState: storeInitialState,
   devTools: __DEV__,
 });

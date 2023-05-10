@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import labels from "../../../../strings/labels";
 import { useBouncedValue } from "../../../controllers/useBouncedValue";
 import { TextInput } from "react-native";
+import { countryUseCases } from "../../../../domain/useCases/country";
+import { countryRepositoryImplement } from "../../../../domain/repositoryImplement/country";
 
 export function useSearchBar() {
 
@@ -20,13 +22,8 @@ export function useSearchBar() {
     // References
     const searchBarRef = useRef<TextInput>(null);
 
-
-    // Methods
-    function onFindCountry() {
-        if (hasValue) {
-            console.log('Searching country: ', bouncedValue);
-        }
-    }
+    // Use Cases
+    const { removeCountriesSearched } = countryUseCases(countryRepositoryImplement());
 
     function onFocusInput() {
         if (searchBarRef?.current) {
@@ -37,16 +34,11 @@ export function useSearchBar() {
     const onPressButton = useCallback(() => {
         if (hasValue) {
             onChangeValue('');
+            removeCountriesSearched();
         } else {
             onFocusInput();
         }
     }, [value]);
-
-
-    useEffect(() => {
-        onFindCountry();
-    }, [bouncedValue]);
-
 
     return {
         value,
@@ -54,6 +46,7 @@ export function useSearchBar() {
         searchCountriesPlaceholder,
         hasValue,
         onPressButton,
-        searchBarRef
+        searchBarRef,
+        bouncedValue
     };
 }
