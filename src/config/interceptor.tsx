@@ -1,4 +1,4 @@
-import { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
+import { InternalAxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { EnhancedStore } from '@reduxjs/toolkit';
@@ -31,8 +31,11 @@ export const useInterceptor = (_: EnhancedStore<ReduxStore>) => {
     return response;
   }
 
-  const handleResponseError = (error: any) => {
-    Alert.alert(labels.errors.title, labels.errors.anErrorHasOccurred);
+  const handleResponseError = (error: AxiosError) => {
+    Alert.alert(
+      `${labels.errors.title}: ${error?.response?.status}`,
+      error?.message ?? labels.errors.anErrorHasOccurred,
+    );
     throw error;
   };
 

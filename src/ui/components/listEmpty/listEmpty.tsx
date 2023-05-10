@@ -45,9 +45,7 @@ export function ListEmpty(props: ListEmptyProps): JSX.Element {
       })}
       <View height={Spacings.s6} />
       <Text p text muted regular>
-        {hasError
-          ? labels.errors.weHaveProblemsToLoadTheCountries
-          : labels.errors.weDidNotFindACountryWithThatName}
+        {hasError && labels.errors.weHaveProblemsToLoadTheCountries}
       </Text>
       <View height={Spacings.s3} />
       <View style={containerButtonStyle}>

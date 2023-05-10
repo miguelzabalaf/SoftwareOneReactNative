@@ -7,6 +7,7 @@ export default {
     requestError: 'Request error',
     weHaveProblemsToLoadTheCountries: 'We have problems to load the countries',
     weDidNotFindACountryWithThatName: 'We did not find a country with that name',
+    youAreInOfflineMode: 'You are in offline mode',
   },
   placeholders: {
     searchCountries: 'Find your country here.',
