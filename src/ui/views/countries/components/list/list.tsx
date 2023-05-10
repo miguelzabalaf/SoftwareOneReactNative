@@ -77,7 +77,7 @@ export function List(props: ListProps): JSX.Element {
       )}
       ListHeaderComponent={ListHeaderComponent}
       ItemSeparatorComponent={() => <View height={Spacings.s3} />}
-      keyExtractor={item => item?.name?.common}
+      keyExtractor={(_, idx) => idx.toString()}
       ListFooterComponent={
         data?.length > (initialNumToRender ?? 0)
           ? ListFooter({
